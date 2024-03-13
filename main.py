@@ -70,6 +70,6 @@ async def download_csv():
     csv_data.seek(0)
     return StreamingResponse(iter([csv_data.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=data.csv;", "Access-Control-Allow-Origin":"*"})
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
